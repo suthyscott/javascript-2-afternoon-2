@@ -208,19 +208,22 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 function removeItem(myGroceryList,item){
   if(!myGroceryList || !item){
     return anEmptyArray = []
-  }
-  for(let i = 0; i <= myGroceryList.length; i++){
+  } else 
+    {for(let i = 0; i <= myGroceryList.length; i++){
     if(item === myGroceryList[i])
      myGroceryList.splice(i,1)
-  }  
-  return
+    }
+  return myGroceryList
+}
 }
 
 function addItem(myGroceryList,item){
   if(!myGroceryList || !item){
     return anEmptyArray = []
+  } else {
+   myGroceryList.push(item)
   }
-  return myGroceryList.push(item)
+  return myGroceryList
 }
 
 
@@ -253,13 +256,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-function addTen(numbers){
+function addTen(numbers){ 
+  console.log(numbers)
   let newArr = []
-  for (let i = 0; i <= numbers.length; i++){
+  for (let i = 0; i < numbers.length; i++){
     newArr.push(parseInt(numbers[i]) + 10)
     // numbers[i] = +numbers[i]
     // newArr.push(numbers[i] + 10)
   }
+  console.log(newArr)
   return newArr
 }
 
@@ -290,7 +295,7 @@ function longer(arr1,arr2){
   // arr1.length > arr2.length ? arr1.length : arr2.length;
   if(arr1.length > arr2.length){
     return arr1
-  } else if(arr2.length > arr1.length) {
+  } else  {
     return arr2
   } 
   
@@ -315,13 +320,14 @@ function both(arr1, arr2){
     return arr1
   }
  let newArr = []
-  for (let i = 0; i <= arr1.length; i++){
-    for (let j = 0; j<= arr2.length; j++){
+  for (let i = 0; i < arr1.length; i++){
+    for (let j = 0; j< arr2.length; j++){
       if (arr1[i] === arr2[j]){
         newArr.push(arr1[i])
       }
     }
   }
+  console.log(newArr)
   return newArr
 }
 
@@ -363,23 +369,25 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-devMountainEmployees.push(joe,  cahlan, ryan, colt)
-
+devMountainEmployees.push(joe, cahlan, ryan, colt)
+console.log(devMountainEmployees)
 /*
   Now let's say Cahlan has to take a leave of absence.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
 function loopy(){
-  for (let i = 0; i <= devMountainEmployees.length; i++){
-    if (i === cahlan){
+  for (let i = 0; i <= devMountainEmployees.length-1; i++){
+    console.log(devMountainEmployees[i])
+    if (devMountainEmployees[i] === cahlan){
+      console.log("hit")
       devMountainEmployees.splice(i,1)
     }
   }
   return devMountainEmployees
 }
 
-
+loopy()
 
 ////////// PROBLEM 13 //////////
 
