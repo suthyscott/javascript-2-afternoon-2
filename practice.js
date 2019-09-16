@@ -128,7 +128,16 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  let newNumbersArray = [[],[]]
+    for(let i = 1; i <= numbersArray.length; i++){
+      if(i % 2 === 0){
+        newNumbersArray[0].push(i)
+      } else newNumbersArray[1].push(i)
+
+    } 
+    return newNumbersArray
+}
 
 
 
@@ -150,7 +159,24 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+function finder(array){
+  let randomNumber = getRandomArbitrary()
+  for (let i = 0; i <= array.length; i++){
+    if (array[i] === randomNumber){
+      return true
+    }     
+  }return false
+}
+
+// function finder(array){
+//   let randomNumber = getRandomArbitrary()
+//   for (i in array){
+//     if (randomNumber === array[i]){
+//             return true
+//     } else
+//     return false
+//   }
+// }
 
 
 
@@ -179,7 +205,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+function removeItem(myGroceryList,item){
+  if(!myGroceryList || !item){
+    return anEmptyArray = []
+  }
+  for(let i = 0; i <= myGroceryList.length; i++){
+    if(item === myGroceryList[i])
+     myGroceryList.splice(i,1)
+  }  
+  return
+}
+
+function addItem(myGroceryList,item){
+  if(!myGroceryList || !item){
+    return anEmptyArray = []
+  }
+  return myGroceryList.push(item)
+}
 
 
 
@@ -189,7 +231,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker(){
+  let arr = []
+  for(let i = 1; i <= 215; i++){
+    arr.push(i)
+  }
+  return arr
+}
 
 
 
@@ -205,7 +253,15 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   Your output should look like this -> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
+function addTen(numbers){
+  let newArr = []
+  for (let i = 0; i <= numbers.length; i++){
+    newArr.push(parseInt(numbers[i]) + 10)
+    // numbers[i] = +numbers[i]
+    // newArr.push(numbers[i] + 10)
+  }
+  return newArr
+}
 
 
 
@@ -230,10 +286,17 @@ for(var i = 0; i < num2; i++){
   Return the longer of the two arrays.
 */
 
-//Code Here
+function longer(arr1,arr2){
+  // arr1.length > arr2.length ? arr1.length : arr2.length;
+  if(arr1.length > arr2.length){
+    return arr1
+  } else if(arr2.length > arr1.length) {
+    return arr2
+  } 
+  
+}
 
-
-
+console.log("hello")
 /*
   As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example).
@@ -242,7 +305,25 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+function both(arr1, arr2){
+
+  if(!arr){
+    return arr2
+  }
+
+  if(!arr){
+    return arr1
+  }
+ let newArr = []
+  for (let i = 0; i <= arr1.length; i++){
+    for (let j = 0; j<= arr2.length; j++){
+      if (arr1[i] === arr2[j]){
+        newArr.push(arr1[i])
+      }
+    }
+  }
+  return newArr
+}
 
 
 
@@ -282,16 +363,21 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
-
-
+devMountainEmployees.push(joe,  cahlan, ryan, colt)
 
 /*
   Now let's say Cahlan has to take a leave of absence.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+function loopy(){
+  for (let i = 0; i <= devMountainEmployees.length; i++){
+    if (i === cahlan){
+      devMountainEmployees.splice(i,1)
+    }
+  }
+  return devMountainEmployees
+}
 
 
 
@@ -303,7 +389,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = []
 
 
 
@@ -322,9 +408,21 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+  name: 'Jackson Ilmore',
+  email: 'ji@devmounta.in',
+  password: 'whassup',
+  username: 'JackedSon'
+};
 
+var user3 = {
+  name: 'Hobo Joe',
+  email: 'hb@devmounta.in',
+  password: 'hobolobo',
+  username: 'jumpinjoe'
+};
 
+users.push(user1, user2, user3)
 
 /*
   Now you have a very common data structure. 
@@ -336,8 +434,14 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
-
+function deleteMark(){
+  for (let i = 0; i <= users.length; i++){
+    if (users[i][email] === 'mark.mciver@devmounta.in'){
+      users.splice(i,1)
+    }
+  }
+  return users
+}
 
 
 /*
